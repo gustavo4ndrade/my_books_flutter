@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:my_books/home/book_wiget.dart';
 
 class HomePage extends StatefulWidget{
   @override
@@ -8,6 +9,10 @@ class HomePage extends StatefulWidget{
 
 class _HomePageState extends State<HomePage> {
   List<String> categories = [
+    "Typography", "Android", "Java", "Flutter", "Kotlin", "Programming", "Math"
+  ];
+
+  List<String> fakeBooks = [
     "Typography", "Android", "Java", "Flutter", "Kotlin", "Programming", "Math"
   ];
 
@@ -88,6 +93,13 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
+            ListView.builder(
+              itemCount: fakeBooks.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index){
+                return BookWiget();
+              },
+            )
           ],
         ),
       )
